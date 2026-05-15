@@ -1,0 +1,66 @@
+/* Regras Gerais */
+p {
+    padding: 0;
+}
+
+/* Navegação (Header) */
+nav {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-decoration: none;
+}
+
+/* Título Principal */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Área Principal (Main) */
+main {
+    max-width: 840px; /* Requisito da tarefa */
+    margin: 0 auto;
+}
+
+/* Imagem do Perfil (dentro do Main) */
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Barra Lateral (Aside) */
+aside {
+    width: 20rem; /* Requisito da tarefa */
+    margin: 1.5rem auto;
+    border: 1px solid rgb(0 0 0 / 0.2); /* Borda subtil recomendada */
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+/* Imagem do Estado (dentro do Aside) */
+aside img {
+    width: 200px; /* Requisito exato da tarefa */
+    height: auto;
+}
+
+/* Rodapé (Footer) */
+footer {
+    margin-top: 15px;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 1rem;
+}
