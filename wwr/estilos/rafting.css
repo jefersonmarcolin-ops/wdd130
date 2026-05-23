@@ -11,7 +11,7 @@
   --fonte-body: Arial, Helvetica, sans-serif;
 }
 
-/* Reset do Box Model para consistência de layout */
+/* Reset estrutural do seletor universal */
 * {
   margin: 0;
   padding: 0;
@@ -23,13 +23,13 @@ body {
   color: var(--cor-destaque1);
 }
 
-/* Limitação de largura e centralização das seções principais */
+/* Limitação de largura das seções e centralização na tela */
 header, main, footer {
   width: 840px;
   margin: 0 auto;
 }
 
-/* Espaçamento interno e margens padrão do projeto */
+/* Margens e preenchimentos consistentes solicitados na especificação */
 nav, p, section, article {
   margin: 16px;
   padding: 8px;
@@ -37,26 +37,24 @@ nav, p, section, article {
 
 
 /* ==========================================================================
-   2. CABEÇALHO (HEADER) - Alinhamento do Logo e Menu Lateral
+   2. CABEÇALHO (HEADER) - Alinhamento Horizontal do Topo
    ========================================================================== */
 
 header {
   display: flex;
-  justify-content: space-between; /* Joga o logo para a esquerda e o menu para a direita */
-  align-items: center;            /* Alinha ambos verticalmente no centro */
-  padding: 10px 16px;
+  justify-content: space-between; /* Move o logo para a esquerda e o menu para a direita */
+  align-items: center;            /* Alinha os elementos verticalmente no centro */
+  padding: 15px 16px;
 }
 
-/* Ajuste de tamanho do logotipo para não empurrar o layout */
 header img {
-  max-height: 70px;
+  max-height: 75px;
   width: auto;
 }
 
-/* Transforma o menu em uma linha horizontal */
 header nav {
   display: flex;
-  gap: 20px; /* Dá um espaçamento elegante entre os links */
+  gap: 24px; /* Espaçamento ideal entre os links da barra de navegação */
   margin: 0;
   padding: 0;
 }
@@ -73,11 +71,12 @@ header nav a:hover {
 
 
 /* ==========================================================================
-   3. BLOCO HERO - Correção de Sobreposição de Texto
+   3. BLOCO HERO - Resolução de Sobreposições
    ========================================================================== */
 
 .hero {
   position: relative;
+  overflow: hidden;
 }
 
 .hero img {
@@ -86,40 +85,42 @@ header nav a:hover {
   height: auto;
 }
 
-/* Títulos h1 centralizados com a fonte e cor corretas */
 h1, h2 {
   font-family: var(--fonte-titulo);
   color: var(--cor-primaria);
   text-align: center;
 }
 
-/* Ajuste do h1 para sair de cima do texto nativo da imagem (.svg) */
+/* Posicionamento do H1 centralizado de forma harmônica no banner */
 .hero h1 {
   position: absolute;
-  top: 140px; /* Empurra o título do HTML para baixo do texto escuro da imagem */
-  width: 100%;
-  padding: 16px;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centralização matemática exata */
+  width: 90%;
+  padding: 12px;
   text-align: center;
-  opacity: 0.85; /* Melhora a opacidade para dar mais leitura ao texto claro */
+  opacity: 0.9;
   background-color: var(--cor-destaque1);
-  color: var(--cor-destaque2); /* Mantém o uso obrigatório da variável */
+  color: var(--cor-destaque2); /* Garante o uso de todas as variáveis no arquivo */
 }
 
-/* Caixa do Artigo sobreposta na parte inferior do Hero */
+/* Posicionamento do Artigo (Missão) fixado na base para não colidir com o H1 */
 .hero article {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background-color: rgba(255, 255, 255, 0.85); 
-  border: 1px solid var(--cor-secundaria);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0; 
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo claro com excelente leitura */
+  border-top: 1px solid var(--cor-secundaria);
+  padding: 14px 20px;
 }
 
-/* Imagem interna do artigo alinhada à direita */
 .hero article img {
   float: right;
-  width: 125px;
-  margin-left: 10px;
+  width: 95px; /* Ajuste sutil de tamanho para dar respiro ao texto */
+  margin-left: 15px;
 }
 
 
