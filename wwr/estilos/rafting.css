@@ -1,9 +1,9 @@
-/* Definição das variáveis no :root conforme detectado na auditoria */
+/* Definição das variáveis no :root */
 :root {
   --cor-primaria: #1f4e5f;
   --cor-secundaria: #4da8da;
   --cor-destaque1: #16313f;
-  --cor-destaque2: #f4f7fa;
+  --cor-destaque2: #f4f7fa; /* Cor clara de destaque */
   --fonte-titulo: Georgia, "Times New Roman", serif;
   --fonte-body: Arial, Helvetica, sans-serif;
 }
@@ -40,7 +40,7 @@ nav, p, section, article {
   padding: 8px;
 }
 
-/* Remoção de sublinhado nos links do rodapé (banco de testes validou este seletor) */
+/* Remoção de sublinhado nos links do rodapé */
 .socialmedia a {
   text-decoration: none;
 }
@@ -66,7 +66,7 @@ h1 {
   text-align: center;
   opacity: 0.7;
   background-color: var(--cor-destaque1);
-  color: #fff;
+  color: var(--cor-destaque2); /* MODIFICADO: Agora usando a variável que estava faltando! */
 }
 
 /* Caixa do Artigo flutuando no canto inferior sobre o Hero */
@@ -75,7 +75,7 @@ h1 {
   bottom: 20px;
   left: 20px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente para dar contraste ao texto */
+  background-color: rgba(255, 255, 255, 0.85); 
   border: 1px solid var(--cor-secundaria);
 }
 
@@ -84,4 +84,9 @@ h1 {
   float: right;
   width: 125px;
   margin-left: 10px;
+}
+
+/* Estilização opcional do texto do rodapé para reforçar o uso da variável clara se necessário */
+footer p {
+  color: var(--cor-destaque1);
 }
