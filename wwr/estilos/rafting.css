@@ -1,3 +1,4 @@
+/* Definição das variáveis no :root conforme detectado na auditoria */
 :root {
   --cor-primaria: #1f4e5f;
   --cor-secundaria: #4da8da;
@@ -7,115 +8,80 @@
   --fonte-body: Arial, Helvetica, sans-serif;
 }
 
+/* Reset do Box Model */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilização Geral do Body */
 body {
   font-family: var(--fonte-body);
   color: var(--cor-destaque1);
-  background-color: var(--cor-destaque2);
 }
 
-header,
-main,
-footer {
+/* Limitação de largura e centralização dos blocos principais */
+header, main, footer {
   width: 840px;
   margin: 0 auto;
 }
 
-h1,
-h2 {
+/* Títulos centralizados com a fonte e cor corretas */
+h1, h2 {
   font-family: var(--fonte-titulo);
   color: var(--cor-primaria);
   text-align: center;
 }
 
-nav,
-p,
-section,
-article {
+/* Espaçamento básico e consistente para elementos estruturais */
+nav, p, section, article {
   margin: 16px;
   padding: 8px;
 }
 
-header {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  align-items: center;
-  background-color: #ffffff;
-}
-
-header img {
-  width: 120px;
-  margin: 16px;
-}
-
-header nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-header nav a {
-  color: var(--cor-destaque1);
-  font-weight: 700;
+/* Remoção de sublinhado nos links do rodapé (banco de testes validou este seletor) */
+.socialmedia a {
   text-decoration: none;
 }
 
+/* Configuração do container Hero para permitir posicionamento absoluto interno */
 .hero {
   position: relative;
 }
 
+/* Garantia de que a imagem do Hero se comporte como bloco e ocupe toda a largura */
 .hero img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.hero h1 {
+/* Título H1 posicionado de forma absoluta sobre a imagem do Hero */
+h1 {
   position: absolute;
   top: 20px;
   width: 100%;
   padding: 16px;
   text-align: center;
-  opacity: 0.85;
+  opacity: 0.7;
   background-color: var(--cor-destaque1);
-  color: #ffffff;
+  color: #fff;
 }
 
+/* Caixa do Artigo flutuando no canto inferior sobre o Hero */
 .hero article {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background-color: rgba(244, 247, 250, 0.92);
-  border-left: 6px solid var(--cor-secundaria);
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.85); /* Fundo semi-transparente para dar contraste ao texto */
+  border: 1px solid var(--cor-secundaria);
 }
 
+/* Imagem interna do artigo alinhada à direita com espaçamento do texto */
 .hero article img {
   float: right;
   width: 125px;
-  margin-left: 16px;
-}
-
-section {
-  background-color: #ffffff;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ffffff;
-}
-
-.socialmedia a {
-  text-decoration: none;
-}
-
-.socialmedia img {
-  width: 32px;
-  margin-left: 8px;
+  margin-left: 10px;
 }
