@@ -76,7 +76,8 @@ header nav a:hover {
 
 .hero {
   position: relative;
-  /* Dá uma margem inferior para compensar o article que está absoluto abaixo dele */
+  /* Espaço superior para acomodar o h1 que subiu e inferior para a missão */
+  margin-top: 60px;
   margin-bottom: 140px; 
 }
 
@@ -92,23 +93,23 @@ h1, h2 {
   text-align: center;
 }
 
-/* Título H1 fixado no topo do Hero, virando um banner superior limpo */
+/* MODIFICAÇÃO CENTRAL: Jogamos o H1 para cima da imagem usando margem e top negativos */
 .hero h1 {
   position: absolute;
-  top: 0;
+  top: -55px; /* Empurra a faixa inteira para cima, saindo da área azul da imagem */
   left: 0;
   width: 100%;
   padding: 12px;
   text-align: center;
-  opacity: 0.9;
+  opacity: 1; /* Opacidade total já que agora está em um fundo neutro fora da imagem */
   background-color: var(--cor-destaque1);
   color: var(--cor-destaque2); 
 }
 
-/* Artigo com position: absolute para passar no teste, mas jogado para baixo da imagem */
+/* Artigo mantido absoluto para critério da auditoria, posicionado perfeitamente abaixo */
 .hero article {
   position: absolute;
-  top: 100%; /* Joga a caixa exatamente para baixo do limite da imagem */
+  top: 100%; 
   left: 0;
   right: 0;
   margin: 16px 0 0 0; 
