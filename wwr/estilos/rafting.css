@@ -71,12 +71,11 @@ header nav a:hover {
 
 
 /* ==========================================================================
-   3. BLOCO HERO - Resolução de Sobreposições
+   3. BLOCO HERO - Resolução de Sobreposições (Missão abaixo da Imagem)
    ========================================================================== */
 
 .hero {
   position: relative;
-  overflow: hidden;
 }
 
 .hero img {
@@ -91,10 +90,10 @@ h1, h2 {
   text-align: center;
 }
 
-/* Posicionamento do H1 centralizado de forma harmônica no banner */
+/* Título H1 centralizado no meio da imagem do Hero */
 .hero h1 {
   position: absolute;
-  top: 42%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Centralização matemática exata */
   width: 90%;
@@ -105,21 +104,17 @@ h1, h2 {
   color: var(--cor-destaque2); /* Garante o uso de todas as variáveis no arquivo */
 }
 
-/* Posicionamento do Artigo (Missão) fixado na base para não colidir com o H1 */
+/* CORREÇÃO: Removido o position: absolute. Agora a missão fica naturalmente abaixo da figura */
 .hero article {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0; 
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo claro com excelente leitura */
-  border-top: 1px solid var(--cor-secundaria);
-  padding: 14px 20px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border: 1px solid var(--cor-secundaria);
+  margin-top: 20px; /* Adiciona um espaço elegante entre a imagem e o texto */
 }
 
+/* Alinhamento da imagem interna do artigo à direita */
 .hero article img {
   float: right;
-  width: 95px; /* Ajuste sutil de tamanho para dar respiro ao texto */
+  width: 95px; 
   margin-left: 15px;
 }
 
