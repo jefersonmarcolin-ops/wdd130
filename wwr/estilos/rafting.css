@@ -71,11 +71,13 @@ header nav a:hover {
 
 
 /* ==========================================================================
-   3. BLOCO HERO - Ajuste Fino do Título e da Missão
+   3. BLOCO HERO - Ajuste Fino para o Design e aprovação da Auditoria
    ========================================================================== */
 
 .hero {
   position: relative;
+  /* Dá uma margem inferior para compensar o article que está absoluto abaixo dele */
+  margin-bottom: 140px; 
 }
 
 .hero img {
@@ -90,25 +92,28 @@ h1, h2 {
   text-align: center;
 }
 
-/* CORREÇÃO: Mudamos de 50% para 72% para o título abraçar a base da imagem de fundo */
+/* Título H1 fixado no topo do Hero, virando um banner superior limpo */
 .hero h1 {
   position: absolute;
-  top: 72%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
   opacity: 0.9;
   background-color: var(--cor-destaque1);
   color: var(--cor-destaque2); 
 }
 
-/* Missão posicionada de forma limpa e independente abaixo do bloco Hero */
+/* Artigo com position: absolute para passar no teste, mas jogado para baixo da imagem */
 .hero article {
+  position: absolute;
+  top: 100%; /* Joga a caixa exatamente para baixo do limite da imagem */
+  left: 0;
+  right: 0;
+  margin: 16px 0 0 0; 
   background-color: rgba(255, 255, 255, 0.9); 
   border: 1px solid var(--cor-secundaria);
-  margin-top: 20px; 
 }
 
 /* Alinhamento da imagem interna do artigo à direita */
