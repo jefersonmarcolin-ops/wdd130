@@ -1,75 +1,111 @@
-/* Definição das variáveis no :root */
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+
 :root {
   --cor-primaria: #1f4e5f;
   --cor-secundaria: #4da8da;
   --cor-destaque1: #16313f;
-  --cor-destaque2: #f4f7fa; /* Cor clara de destaque */
+  --cor-destaque2: #f4f7fa;
   --fonte-titulo: Georgia, "Times New Roman", serif;
   --fonte-body: Arial, Helvetica, sans-serif;
 }
 
-/* Reset do Box Model */
+/* Reset do Box Model para consistência de layout */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilização Geral do Body */
 body {
   font-family: var(--fonte-body);
   color: var(--cor-destaque1);
 }
 
-/* Limitação de largura e centralização dos blocos principais */
+/* Limitação de largura e centralização das seções principais */
 header, main, footer {
   width: 840px;
   margin: 0 auto;
 }
 
-/* Títulos centralizados com a fonte e cor corretas */
-h1, h2 {
-  font-family: var(--fonte-titulo);
-  color: var(--cor-primaria);
-  text-align: center;
-}
-
-/* Espaçamento básico e consistente para elementos estruturais */
+/* Espaçamento interno e margens padrão do projeto */
 nav, p, section, article {
   margin: 16px;
   padding: 8px;
 }
 
-/* Remoção de sublinhado nos links do rodapé */
-.socialmedia a {
-  text-decoration: none;
+
+/* ==========================================================================
+   2. CABEÇALHO (HEADER) - Alinhamento do Logo e Menu Lateral
+   ========================================================================== */
+
+header {
+  display: flex;
+  justify-content: space-between; /* Joga o logo para a esquerda e o menu para a direita */
+  align-items: center;            /* Alinha ambos verticalmente no centro */
+  padding: 10px 16px;
 }
 
-/* Configuração do container Hero para permitir posicionamento absoluto interno */
+/* Ajuste de tamanho do logotipo para não empurrar o layout */
+header img {
+  max-height: 70px;
+  width: auto;
+}
+
+/* Transforma o menu em uma linha horizontal */
+header nav {
+  display: flex;
+  gap: 20px; /* Dá um espaçamento elegante entre os links */
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: var(--cor-secundaria);
+}
+
+
+/* ==========================================================================
+   3. BLOCO HERO - Correção de Sobreposição de Texto
+   ========================================================================== */
+
 .hero {
   position: relative;
 }
 
-/* Garantia de que a imagem do Hero se comporte como bloco e ocupe toda a largura */
 .hero img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* Título H1 posicionado de forma absoluta sobre a imagem do Hero */
-h1 {
+/* Títulos h1 centralizados com a fonte e cor corretas */
+h1, h2 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-primaria);
+  text-align: center;
+}
+
+/* Ajuste do h1 para sair de cima do texto nativo da imagem (.svg) */
+.hero h1 {
   position: absolute;
-  top: 20px;
+  top: 140px; /* Empurra o título do HTML para baixo do texto escuro da imagem */
   width: 100%;
   padding: 16px;
   text-align: center;
-  opacity: 0.7;
+  opacity: 0.85; /* Melhora a opacidade para dar mais leitura ao texto claro */
   background-color: var(--cor-destaque1);
-  color: var(--cor-destaque2); /* MODIFICADO: Agora usando a variável que estava faltando! */
+  color: var(--cor-destaque2); /* Mantém o uso obrigatório da variável */
 }
 
-/* Caixa do Artigo flutuando no canto inferior sobre o Hero */
+/* Caixa do Artigo sobreposta na parte inferior do Hero */
 .hero article {
   position: absolute;
   bottom: 20px;
@@ -79,14 +115,22 @@ h1 {
   border: 1px solid var(--cor-secundaria);
 }
 
-/* Imagem interna do artigo alinhada à direita com espaçamento do texto */
+/* Imagem interna do artigo alinhada à direita */
 .hero article img {
   float: right;
   width: 125px;
   margin-left: 10px;
 }
 
-/* Estilização opcional do texto do rodapé para reforçar o uso da variável clara se necessário */
+
+/* ==========================================================================
+   4. RODAPÉ (FOOTER)
+   ========================================================================== */
+
+.socialmedia a {
+  text-decoration: none;
+}
+
 footer p {
   color: var(--cor-destaque1);
 }
