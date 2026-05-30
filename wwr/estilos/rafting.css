@@ -1,17 +1,17 @@
-/* --- 1. VARIÁVEIS CSS (Exigência da Auditoria) --- */
+/* --- 1. VARIÁVEIS CSS --- */
 :root {
-    --cor-primaria: #1f4e5f;     /* correspondente ao rgb(31, 78, 95) */
-    --cor-secundaria: #4da8da;   /* correspondente ao rgb(77, 168, 218) */
-    --cor-destaque1: #16313f;    /* correspondente ao rgb(22, 49, 63) */
-    --cor-destaque2: #f4f7fa;    /* correspondente ao fundo claro #f4f7fa */
+    --cor-primaria: #1f4e5f;     
+    --cor-secundaria: #4da8da;   
+    --cor-destaque1: #16313f;    
+    --cor-destaque2: #f4f7fa;    
     --cor-fundo: #ffffff;
     --cor-texto-escuro: #333333;
     --cor-texto-claro: #ffffff;
     --fonte-principal: Arial, sans-serif;
 }
 
-/* --- 2. RESET DE SELETOR UNIVERSAL (Exigência da Auditoria) --- */
-* {
+/* --- 2. RESET DE SELETOR UNIVERSAL --- */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,7 +33,7 @@ h2 {
 
 /* --- Área Principal (Main) --- */
 main {
-    max-width: 840px; /* Requisito estrito mantido */
+    max-width: 840px; 
     margin: 0 auto;
     padding: 20px;
 }
@@ -61,8 +61,9 @@ header nav {
     background-color: transparent;  
 }
 
+/* Corrigido para garantir que NENHUM texto preto herde aqui dentro */
 header nav a {
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-claro) !important;
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
@@ -70,64 +71,74 @@ header nav a {
 }
 
 header nav a:hover {
-    color: var(--cor-secundaria);                 
+    color: var(--cor-secundaria) !important;                 
 }
 
-/* --- 3. SOBREPOSIÇÃO DO HERO (Exigência Estrita da Auditoria) --- */
+/* --- 3. SOBREPOSIÇÃO DO HERO (Organizado e Tratado) --- */
 .hero {
-    position: relative; /* O container pai DEVE ser relativo */
+    position: relative; 
     text-align: center;
     margin-bottom: 2rem;
     width: 100%;
+    height: 400px; /* Define uma altura limite para segurar os elementos no bloco */
+    background-color: #e5e5e5; /* Fundo neutro caso a imagem suma */
+    overflow: hidden;
 }
 
 .hero > img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o Hero de forma bonita */
     display: block;
 }
 
-/* O título (h1) posicionado em cima de forma absoluta */
+/* O título (h1) centralizado na parte superior */
 .hero h1 {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--cor-destaque1); 
-    background-color: rgba(255, 255, 255, 0.8); /* Fundo sutil para dar leitura */
-    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 12px 24px;
     border-radius: 5px;
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     white-space: nowrap;
+    z-index: 2;
 }
 
-/* O article posicionado na parte inferior da imagem de forma absoluta */
+/* O article posicionado na parte inferior de forma limpa */
 .hero article {
     position: absolute;
     bottom: 20px;
-    left: 5%;
-    right: 5%;
+    left: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Caixa branca para proteger o contraste */
+    background-color: rgba(255, 255, 255, 0.95); 
     padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    z-index: 2;
 }
 
 .hero article img {
-    width: 100px;
-    height: auto;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
     border: 1px solid #ccc;
     padding: 3px;
+    border-radius: 4px;
+    flex-shrink: 0; /* Impede a foto do cliente de amassar */
 }
 
 .hero article p {
     color: var(--cor-texto-escuro);
     margin: 0;
     text-align: left;
+    font-size: 1rem;
 }
 
 /* --- SEÇÃO HISTÓRIA (Grid de 2 Colunas) --- */
@@ -144,7 +155,8 @@ header nav a:hover {
 
 .historia-conteudo img {
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -184,7 +196,7 @@ header nav a:hover {
     font-weight: bold;
 }
 
-/* --- RODAPÉ (Footer com Flexbox) --- */
+/* --- RODAPÉ (Footer) --- */
 footer {
     display: flex;
     justify-content: space-between; 
@@ -200,7 +212,7 @@ footer p {
     color: var(--cor-primaria);
 }
 
-/* Alinhamento horizontal das redes sociais no rodapé */
+/* Alinhamento das redes sociais */
 footer nav.socialmedia {
     display: flex;
     gap: 15px;                      
@@ -208,11 +220,9 @@ footer nav.socialmedia {
     padding: 0;
 }
 
-/* Corrigido o erro de contraste: Forçando os links do rodapé a serem escuros */
 footer nav.socialmedia a {
     padding: 0;
     display: inline;
-    color: var(--cor-destaque1); 
 }
 
 footer nav.socialmedia img {
