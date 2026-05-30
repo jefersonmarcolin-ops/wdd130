@@ -10,7 +10,7 @@
     --fonte-principal: Arial, sans-serif;
 }
 
-/* --- 2. RESET DE SELETOR UNIVERSAL --- */
+/* --- 2. RESET UNIVERSAL --- */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -32,13 +32,6 @@ h2 {
     color: var(--cor-primaria);
 }
 
-/* --- Área Principal (Main) --- */
-main {
-    max-width: 840px; 
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* --- CABEÇALHO (Header com CSS Grid) --- */
 header {
     display: grid;
@@ -46,7 +39,6 @@ header {
     align-items: center;            
     background-color: var(--cor-destaque1); 
     padding: 1rem 2rem;
-    color: var(--cor-texto-claro); /* Força qualquer texto direto no header a ser branco */
 }
 
 header .logo {
@@ -63,10 +55,14 @@ header nav {
     background-color: transparent;  
 }
 
-/* Correção de Contraste: Garante que os links sejam brancos e ignora o cinza do body */
-header nav a {
+/* CORREÇÃO DO ERRO DA AUDITORIA: 
+   Garante contraste absoluto forçando cor clara nos links do header, matando o preto (rgb(0,0,0)) */
+header nav a, 
+header a, 
+header nav a:link, 
+header nav a:visited {
     color: var(--cor-texto-claro) !important;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: bold;
     padding: 0.5rem 1rem;
     display: inline-block;
@@ -76,13 +72,12 @@ header nav a:hover {
     color: var(--cor-secundaria) !important;                 
 }
 
-/* --- 3. SOBREPOSIÇÃO DO HERO (Ajuste de Alturas e Camadas) --- */
+/* --- 3. SOBREPOSIÇÃO DO HERO (Ajuste Visual Focado) --- */
 .hero {
     position: relative; 
     text-align: center;
     margin-bottom: 2rem;
     width: 100%;
-    display: block;
 }
 
 .hero > img {
@@ -91,36 +86,37 @@ header nav a:hover {
     display: block;
 }
 
-/* O título (h1) posicionado em cima de forma absoluta */
+/* Título em posição absoluta com fundo branco sólido para isolar da escrita interna do SVG */
 .hero h1 {
     position: absolute;
-    top: 25px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--cor-destaque1); 
-    background-color: rgba(255, 255, 255, 0.85); 
-    padding: 10px 20px;
-    border-radius: 5px;
+    background-color: rgb(255, 255, 255); /* Fundo 100% sólido elimina conflito de imagens */
+    padding: 10px 25px;
+    border-radius: 4px;
     margin: 0;
     font-size: 2rem;
     white-space: nowrap;
-    z-index: 10; /* Garante que fica por cima de tudo de forma limpa */
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* O article posicionado na parte inferior de forma absoluta */
+/* Artigo inferior em posição absoluta com fundo sólido elevado */
 .hero article {
     position: absolute;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: rgba(255, 255, 255, 0.95); 
+    background-color: rgb(255, 255, 255); /* Fundo 100% sólido protege o texto */
     padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    z-index: 10;
+    border-radius: 4px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 5;
 }
 
 .hero article img {
@@ -128,7 +124,7 @@ header nav a:hover {
     height: auto;
     border: 1px solid #ccc;
     padding: 3px;
-    flex-shrink: 0; /* Impede a imagem interna de achatar */
+    flex-shrink: 0;
 }
 
 .hero article p {
@@ -206,7 +202,6 @@ footer p {
     color: var(--cor-primaria);
 }
 
-/* Alinhamento horizontal das redes sociais */
 footer nav.socialmedia {
     display: flex;
     gap: 15px;                      
