@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="Canyon do Rio Iguacu">
+  <rect width="200" height="140" fill="#6b8e7a"/>
+  <rect x="30" y="0" width="50" height="140" fill="#4a6741"/>
+  <rect x="120" y="0" width="50" height="140" fill="#3d5636"/>
+  <rect y="75" width="200" height="65" fill="#2d6a8a"/>
+  <rect x="75" y="62" width="50" height="18" rx="3" fill="#e76f51"/>
+</svg>

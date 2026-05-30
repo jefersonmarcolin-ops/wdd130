@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="Queda do Rio Juquia">
+  <rect width="200" height="140" fill="#a8dadc"/>
+  <rect y="50" width="200" height="90" fill="#457b9d"/>
+  <path d="M95 10 L105 55 L95 55 Z" fill="#fff" opacity="0.8"/>
+  <path d="M0 68c25-15 50-15 75 0s50 15 75 0 25-15 50 0" fill="none" stroke="#fff" stroke-width="4"/>
+  <rect x="72" y="58" width="56" height="20" rx="4" fill="#f94144"/>
+</svg>

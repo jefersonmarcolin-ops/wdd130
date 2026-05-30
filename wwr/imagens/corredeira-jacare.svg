@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="Corredeira do Rio Jacare">
+  <rect width="200" height="140" fill="#5db0d7"/>
+  <rect y="60" width="200" height="80" fill="#1f4e5f"/>
+  <path d="M10 72c18-14 36-14 54 0s36 14 54 0 36-14 54 0" fill="none" stroke="#dff4ff" stroke-width="6"/>
+  <rect x="68" y="50" width="64" height="24" rx="4" fill="#f4a261"/>
+</svg>

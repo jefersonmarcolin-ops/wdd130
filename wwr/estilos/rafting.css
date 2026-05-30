@@ -8,6 +8,8 @@
     --cor-texto-escuro: #333333;
     --cor-texto-claro: #ffffff;
     --fonte-principal: Arial, sans-serif;
+    --fonte-body: Arial, Helvetica, sans-serif;
+    --fonte-titulo: Georgia, "Times New Roman", serif;
 }
 
 /* --- 2. RESET DE SELETOR UNIVERSAL --- */
@@ -19,7 +21,7 @@
 
 /* --- Regras Gerais --- */
 body {
-    font-family: var(--fonte-principal);
+    font-family: var(--fonte-body);
     background-color: var(--cor-fundo);
     color: var(--cor-texto-escuro);
 }
@@ -28,14 +30,28 @@ p {
     line-height: 1.6;
 }
 
+h1,
 h2 {
+    font-family: var(--fonte-titulo);
     color: var(--cor-primaria);
 }
 
-/* --- Área Principal (Main) --- */
-main {
-    max-width: 840px; 
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+header,
+main,
+footer {
+    width: 840px;
     margin: 0 auto;
+}
+
+main {
     padding: 20px;
 }
 
@@ -47,6 +63,7 @@ header {
     background-color: var(--cor-destaque1); 
     color: var(--cor-texto-claro);
     padding: 1rem 2rem;
+    margin-top: 16px;
 }
 
 header .logo {
@@ -60,7 +77,9 @@ header nav {
     display: flex;
     justify-content: flex-end;      
     gap: 1.5rem;                    
-    background-color: transparent;  
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 /* ELIMINAÇÃO DOS DOIS ERROS DE CONTRASTE:
@@ -80,12 +99,28 @@ header nav a:hover {
     color: var(--cor-secundaria);                 
 }
 
-/* --- 3. CONTAINER DO HERO (Resolvendo as sobreposições) --- */
+/* --- 3. CONTAINER DO HERO --- */
 .hero {
     position: relative;
-    margin-bottom: 2.5rem;
     width: 100%;
-    overflow: hidden;
+    margin: 5.5rem 0 9rem;
+    padding: 0;
+}
+
+.hero h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: var(--cor-destaque1);
+    opacity: 0.9;
+    font-size: 2rem;
+    text-align: center;
+    transform: translateY(calc(-100% - 1rem));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hero > img {
@@ -94,38 +129,20 @@ header nav a:hover {
     display: block;
 }
 
-/* O título agora fica fixado no topo com margem de segurança */
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    max-width: calc(100% - 40px);
-    color: var(--cor-destaque1); 
-    background-color: rgb(255, 255, 255); 
-    padding: 10px 25px;
-    font-size: 2rem;
-    text-align: center;
-    border-radius: 6px;
-    z-index: 2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* O artigo fica ancorado na base sem colidir com as letras de cima */
 .hero article {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 1rem 0 0;
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: rgb(255, 255, 255); 
+    width: 100%;
+    background-color: rgb(255, 255, 255);
     padding: 15px;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 2;
 }
 
 .hero article img {
@@ -215,8 +232,13 @@ footer p {
 footer nav.socialmedia {
     display: flex;
     gap: 15px;                      
-    background-color: transparent;  
+    background-color: transparent;
+    margin: 0;
     padding: 0;
+}
+
+.socialmedia a {
+    text-decoration: none;
 }
 
 footer nav.socialmedia a {
