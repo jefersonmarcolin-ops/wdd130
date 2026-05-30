@@ -45,6 +45,7 @@ header {
     grid-template-columns: auto 1fr; 
     align-items: center;            
     background-color: var(--cor-destaque1); 
+    color: var(--cor-texto-claro);
     padding: 1rem 2rem;
 }
 
@@ -68,60 +69,55 @@ header nav a,
 header nav a:link,
 header nav a:visited,
 header nav a:active {
-    color: var(--cor-texto-claro) !important;
-    text-decoration: none !important;
+    color: var(--cor-texto-claro);
+    text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
     display: inline-block;
 }
 
 header nav a:hover {
-    color: var(--cor-secundaria) !important;                 
+    color: var(--cor-secundaria);                 
 }
 
 /* --- 3. CONTAINER DO HERO (Resolvendo as sobreposições) --- */
 .hero {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
     margin-bottom: 2.5rem;
     width: 100%;
+    overflow: hidden;
 }
 
 .hero > img {
-    grid-column: 1;
-    grid-row: 1 / span 2;
     width: 100%;
     height: auto;
     display: block;
-    z-index: 1;
 }
 
 /* O título agora fica fixado no topo com margem de segurança */
 .hero h1 {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: start;
-    margin-top: 20px;
-    
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    max-width: calc(100% - 40px);
     color: var(--cor-destaque1); 
     background-color: rgb(255, 255, 255); 
     padding: 10px 25px;
-    border-radius: 4px;
     font-size: 2rem;
-    white-space: nowrap;
-    z-index: 5;
+    text-align: center;
+    border-radius: 6px;
+    z-index: 2;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* O artigo fica ancorado na base sem colidir com as letras de cima */
 .hero article {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    align-self: end;
-    margin: 0 20px 20px 20px;
-    
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -129,10 +125,11 @@ header nav a:hover {
     padding: 15px;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 5;
+    z-index: 2;
 }
 
 .hero article img {
+    float: right;
     width: 80px;
     height: auto;
     border: 1px solid #ccc;
