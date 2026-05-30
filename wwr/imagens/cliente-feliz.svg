@@ -1,9 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Cliente feliz">
-  <rect width="220" height="220" fill="#eef7ff"/>
-  <circle cx="110" cy="90" r="48" fill="#ffd6b0"/>
-  <circle cx="90" cy="80" r="6" fill="#16313f"/>
-  <circle cx="130" cy="80" r="6" fill="#16313f"/>
-  <path d="M85 105c8 12 42 12 50 0" fill="none" stroke="#16313f" stroke-width="4" stroke-linecap="round"/>
-  <rect x="62" y="140" width="96" height="54" rx="12" fill="#f28f3b"/>
-  <path d="M40 165c18-18 36-26 70-26s52 8 70 26" fill="none" stroke="#4da8da" stroke-width="10"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Cliente feliz com equipamento de rafting">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0F4FF"/>
+      <stop offset="100%" stop-color="#B8E0F5"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="220" rx="12" fill="url(#bg)"/>
+  <ellipse cx="110" cy="195" rx="85" ry="18" fill="#2E8BC0" opacity="0.35"/>
+  <path d="M30 170 Q110 140 190 170" fill="none" stroke="#4DA8DA" stroke-width="6"/>
+  <rect x="55" y="115" width="110" height="55" rx="10" fill="#E85D04"/>
+  <ellipse cx="110" cy="88" r="42" fill="#F4A261"/>
+  <ellipse cx="110" cy="78" r="34" fill="#FFD6A5"/>
+  <path d="M78 68 Q110 48 142 68 L138 82 Q110 62 82 82 Z" fill="#E63946"/>
+  <rect x="82" y="58" width="56" height="18" rx="6" fill="#E63946"/>
+  <circle cx="96" cy="82" r="5" fill="#1D3557"/>
+  <circle cx="124" cy="82" r="5" fill="#1D3557"/>
+  <path d="M92 98 Q110 112 128 98" fill="none" stroke="#1D3557" stroke-width="3" stroke-linecap="round"/>
+  <rect x="95" y="108" width="30" height="22" rx="4" fill="#457B9D"/>
+  <line x1="40" y1="130" x2="25" y2="95" stroke="#8B5A2B" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="22" cy="92" rx="14" ry="8" fill="#F1FAEE" transform="rotate(-30 22 92)"/>
 </svg>

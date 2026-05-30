@@ -1,6 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="Corredeira do Rio Jacare">
-  <rect width="200" height="140" fill="#5db0d7"/>
-  <rect y="60" width="200" height="80" fill="#1f4e5f"/>
-  <path d="M10 72c18-14 36-14 54 0s36 14 54 0 36-14 54 0" fill="none" stroke="#dff4ff" stroke-width="6"/>
-  <rect x="68" y="50" width="64" height="24" rx="4" fill="#f4a261"/>
+  <rect width="200" height="140" fill="#48CAE4"/>
+  <rect y="50" width="200" height="90" fill="#0077B6"/>
+  <path d="M0 62 Q25 48 50 62 T100 62 T150 62 T200 62" fill="#FFFFFF" opacity="0.35"/>
+  <path d="M0 72 Q30 55 60 72 T120 72 T180 72" fill="#FFFFFF" opacity="0.45"/>
+  <path d="M0 85 Q20 70 40 85 T80 85 T120 85 T160 85 T200 85" fill="#FFFFFF" opacity="0.5"/>
+  <path d="M45 98 L155 98 L138 118 L62 118 Z" fill="#FB8500"/>
+  <path d="M55 98 Q100 78 145 98" fill="none" stroke="#C44D00" stroke-width="3"/>
+  <ellipse cx="72" cy="90" rx="11" ry="11" fill="#FFD6A5"/>
+  <ellipse cx="100" cy="86" rx="12" ry="12" fill="#FFD6A5"/>
+  <ellipse cx="128" cy="90" rx="11" ry="11" fill="#FFD6A5"/>
+  <rect x="64" y="80" width="16" height="7" rx="2" fill="#E63946"/>
+  <rect x="92" y="76" width="16" height="7" rx="2" fill="#2A9D8F"/>
+  <rect x="120" y="80" width="16" height="7" rx="2" fill="#457B9D"/>
 </svg>

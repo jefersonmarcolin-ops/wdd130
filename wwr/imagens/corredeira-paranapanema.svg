@@ -1,6 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" role="img" aria-label="Corredeira do Rio Paranapanema">
-  <rect width="200" height="140" fill="#8bd3ff"/>
-  <rect y="65" width="200" height="75" fill="#4da8da"/>
-  <path d="M0 78c20-12 40-12 60 0s40 12 60 0 40-12 60 0 40 12 60 0" fill="none" stroke="#fff" stroke-width="5"/>
-  <rect x="72" y="55" width="56" height="20" rx="4" fill="#e85d04"/>
+  <rect width="200" height="140" fill="#A8DADC"/>
+  <polygon points="0,50 40,20 80,45 120,15 160,40 200,25 200,55 0,70" fill="#52796F" opacity="0.8"/>
+  <rect y="65" width="200" height="75" fill="#2A6F97"/>
+  <path d="M0 78c20-10 40-10 60 0s40 10 60 0 40-10 60 0 40 10 60 0" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.55"/>
+  <path d="M0 92c15-8 30-8 45 0s30 8 45 0 30-8 45 0" fill="none" stroke="#CAF0F8" stroke-width="4"/>
+  <path d="M50 100 L150 100 L132 122 L68 122 Z" fill="#F77F00"/>
+  <circle cx="75" cy="94" r="9" fill="#FFD6A5"/>
+  <circle cx="100" cy="92" r="9" fill="#FFD6A5"/>
+  <circle cx="125" cy="94" r="9" fill="#FFD6A5"/>
+  <line x1="60" y1="102" x2="35" y2="82" stroke="#8B5A2B" stroke-width="4"/>
+  <line x1="140" y1="102" x2="165" y2="80" stroke="#8B5A2B" stroke-width="4"/>
 </svg>
