@@ -1,138 +1,184 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
-   ========================================================================== */
-
-:root {
-  --cor-primaria: #1f4e5f;
-  --cor-secundaria: #4da8da;
-  --cor-destaque1: #16313f;
-  --cor-destaque2: #f4f7fa;
-  --fonte-titulo: Georgia, "Times New Roman", serif;
-  --fonte-body: Arial, Helvetica, sans-serif;
-}
-
-/* Reset estrutural do seletor universal */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* --- Regras Gerais e Reset --- */
 body {
-  font-family: var(--fonte-body);
-  color: var(--cor-destaque1);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
 }
 
-/* Limitação de largura das seções e centralização na tela */
-header, main, footer {
-  width: 840px;
-  margin: 0 auto;
+p {
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Margens e preenchimentos consistentes solicitados na especificação */
-nav, p, section, article {
-  margin: 16px;
-  padding: 8px;
+/* Corrigido para passar com sucesso no teste de contraste AA (13.59:1) */
+h1 {
+    color: rgb(22, 49, 63); 
+    text-align: center;
+    margin-top: 20px;
 }
 
+h2 {
+    color: rgb(31, 78, 95);
+}
 
-/* ==========================================================================
-   2. CABEÇALHO (HEADER) - Alinhamento Horizontal do Topo
-   ========================================================================== */
+/* --- Área Principal (Main) --- */
+main {
+    max-width: 840px; /* Requisito estrito da tarefa */
+    margin: 0 auto;
+    padding: 20px;
+}
 
+/* --- CABEÇALHO (Header com CSS Grid) --- */
 header {
-  display: flex;
-  justify-content: space-between; /* Move o logo para a esquerda e o menu para a direita */
-  align-items: center;            /* Alinha os elementos verticalmente no centro */
-  padding: 15px 16px;
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo na esquerda, espaço restante para o nav */
+    align-items: center;            /* Centraliza verticalmente o logo e os links */
+    background-color: rgb(22, 49, 63); /* Cor escura padrão da sua paleta */
+    padding: 1rem 2rem;
 }
 
-header img {
-  max-height: 75px;
-  width: auto;
+header .logo {
+    max-height: 50px;               
+    width: auto;
+    display: block;
 }
 
+/* NAVEGAÇÃO SUPERIOR (Com CSS Flexbox) */
 header nav {
-  display: flex;
-  gap: 24px; /* Espaçamento ideal entre os links da barra de navegação */
-  margin: 0;
-  padding: 0;
+    display: flex;
+    justify-content: flex-end;      /* Alinha os links de navegação à direita */
+    gap: 1.5rem;                    
+    background-color: transparent;  
+    padding: 0;
 }
 
 header nav a {
-  text-decoration: none;
-  color: var(--cor-primaria);
-  font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
 }
 
 header nav a:hover {
-  color: var(--cor-secundaria);
+    color: rgb(77, 168, 218);                 
 }
 
-
-/* ==========================================================================
-   3. BLOCO HERO - Ajuste Fino para o Design e aprovação da Auditoria
-   ========================================================================== */
-
+/* --- SEÇÃO HERO E ARTIGOS --- */
 .hero {
-  position: relative;
-  /* Espaço superior para acomodar o h1 que subiu e inferior para a missão */
-  margin-top: 60px;
-  margin-bottom: 140px; 
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
+.hero > img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-h1, h2 {
-  font-family: var(--fonte-titulo);
-  color: var(--cor-primaria);
-  text-align: center;
-}
-
-/* MODIFICAÇÃO CENTRAL: Jogamos o H1 para cima da imagem usando margem e top negativos */
-.hero h1 {
-  position: absolute;
-  top: -55px; /* Empurra a faixa inteira para cima, saindo da área azul da imagem */
-  left: 0;
-  width: 100%;
-  padding: 12px;
-  text-align: center;
-  opacity: 1; /* Opacidade total já que agora está em um fundo neutro fora da imagem */
-  background-color: var(--cor-destaque1);
-  color: var(--cor-destaque2); 
-}
-
-/* Artigo mantido absoluto para critério da auditoria, posicionado perfeitamente abaixo */
 .hero article {
-  position: absolute;
-  top: 100%; 
-  left: 0;
-  right: 0;
-  margin: 16px 0 0 0; 
-  background-color: rgba(255, 255, 255, 0.9); 
-  border: 1px solid var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 1.5rem;
+    text-align: left;
 }
 
-/* Alinhamento da imagem interna do artigo à direita */
 .hero article img {
-  float: right;
-  width: 95px; 
-  margin-left: 15px;
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* --- SEÇÃO HISTÓRIA (Grid de 2 Colunas) --- */
+.historia-section {
+    margin: 2.5rem 0;
+}
 
-/* ==========================================================================
-   4. RODAPÉ (FOOTER)
-   ========================================================================== */
+.historia-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem;
+    align-items: center;
+}
 
-.socialmedia a {
-  text-decoration: none;
+.historia-conteudo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* --- SEÇÃO DE AVENTURAS (Galeria de 5 colunas com Flexbox) --- */
+.aventuras-section {
+    margin: 3rem 0;
+}
+
+.galeria-aventuras {
+    display: flex;
+    justify-content: space-between; 
+    gap: 12px;                      
+    margin-top: 1.5rem;
+}
+
+.galeria-aventuras figure {
+    flex: 1;                        /* Divide o espaço horizontal igualmente por 5 */
+    margin: 0;
+    background-color: #f4f7fa;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.galeria-aventuras img {
+    width: 100%;                    
+    height: 120px;                  /* Fixa a altura para alinhar horizontalmente perfeito */
+    object-fit: cover;              /* Ajusta a imagem sem distorcer */
+    display: block;
+}
+
+.galeria-aventuras figcaption {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: rgb(22, 49, 63);
+    font-weight: bold;
+}
+
+/* --- RODAPÉ (Footer com Flexbox nas extremidades) --- */
+footer {
+    display: flex;
+    justify-content: space-between; /* Texto na esquerda, ícones na direita */
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #000;     
+    padding: 1.5rem;
+    background-color: #f4f7fa;
 }
 
 footer p {
-  color: var(--cor-destaque1);
+    margin: 0;
+    color: rgb(31, 78, 95);
+}
+
+/* Alinhamento horizontal do nav de redes sociais no rodapé */
+footer nav.socialmedia {
+    display: flex;
+    gap: 15px;                      
+    background-color: transparent;  
+    padding: 0;
+}
+
+footer nav.socialmedia a {
+    padding: 0;
+    display: inline;
+}
+
+footer nav.socialmedia img {
+    width: 30px;                    
+    height: auto;
 }
