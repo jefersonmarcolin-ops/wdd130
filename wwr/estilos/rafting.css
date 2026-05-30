@@ -10,7 +10,7 @@
     --fonte-principal: Arial, sans-serif;
 }
 
-/* --- 2. RESET UNIVERSAL --- */
+/* --- 2. RESET DE SELETOR UNIVERSAL --- */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -30,6 +30,13 @@ p {
 
 h2 {
     color: var(--cor-primaria);
+}
+
+/* --- Área Principal (Main) --- */
+main {
+    max-width: 840px; 
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* --- CABEÇALHO (Header com CSS Grid) --- */
@@ -55,12 +62,12 @@ header nav {
     background-color: transparent;  
 }
 
-/* CORREÇÃO DO ERRO DA AUDITORIA: 
-   Garante contraste absoluto forçando cor clara nos links do header, matando o preto (rgb(0,0,0)) */
-header nav a, 
-header a, 
-header nav a:link, 
-header nav a:visited {
+/* ELIMINAÇÃO DOS DOIS ERROS DE CONTRASTE:
+   Força rigidamente a cor branca em absolutamente todos os estados dos links do header */
+header nav a,
+header nav a:link,
+header nav a:visited,
+header nav a:active {
     color: var(--cor-texto-claro) !important;
     text-decoration: none !important;
     font-weight: bold;
@@ -72,50 +79,56 @@ header nav a:hover {
     color: var(--cor-secundaria) !important;                 
 }
 
-/* --- 3. SOBREPOSIÇÃO DO HERO (Ajuste Visual Focado) --- */
+/* --- 3. CONTAINER DO HERO (Resolvendo as sobreposições) --- */
 .hero {
-    position: relative; 
-    text-align: center;
-    margin-bottom: 2rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-bottom: 2.5rem;
     width: 100%;
 }
 
 .hero > img {
+    grid-column: 1;
+    grid-row: 1 / span 2;
     width: 100%;
     height: auto;
     display: block;
+    z-index: 1;
 }
 
-/* Título em posição absoluta com fundo branco sólido para isolar da escrita interna do SVG */
+/* O título agora fica fixado no topo com margem de segurança */
 .hero h1 {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    margin-top: 20px;
+    
     color: var(--cor-destaque1); 
-    background-color: rgb(255, 255, 255); /* Fundo 100% sólido elimina conflito de imagens */
+    background-color: rgb(255, 255, 255); 
     padding: 10px 25px;
     border-radius: 4px;
-    margin: 0;
     font-size: 2rem;
     white-space: nowrap;
     z-index: 5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Artigo inferior em posição absoluta com fundo sólido elevado */
+/* O artigo fica ancorado na base sem colidir com as letras de cima */
 .hero article {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: end;
+    margin: 0 20px 20px 20px;
+    
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: rgb(255, 255, 255); /* Fundo 100% sólido protege o texto */
+    background-color: rgb(255, 255, 255); 
     padding: 15px;
     border-radius: 4px;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 5;
 }
 
