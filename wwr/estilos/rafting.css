@@ -7,7 +7,6 @@
     --cor-fundo: #ffffff;
     --cor-texto-escuro: #333333;
     --cor-texto-claro: #ffffff;
-    --fonte-principal: Arial, sans-serif;
     --fonte-body: Arial, Helvetica, sans-serif;
     --fonte-titulo: Georgia, "Times New Roman", serif;
 }
@@ -102,44 +101,43 @@ header nav a:hover {
 /* --- 3. CONTAINER DO HERO --- */
 .hero {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
     width: 100%;
-    margin: 5.5rem 0 9rem;
+    margin: 16px 0 2.5rem;
     padding: 0;
 }
 
 .hero h1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    order: 1;
     margin: 0;
     padding: 12px 20px;
-    color: #ffffff;
-    background-color: var(--cor-destaque1);
-    opacity: 0.9;
+    color: var(--cor-destaque1);
+    background-color: var(--cor-fundo);
     font-size: 2rem;
     text-align: center;
-    transform: translateY(calc(-100% - 1rem));
+    border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hero > img {
+    order: 2;
     width: 100%;
     height: auto;
     display: block;
+    margin: 0;
 }
 
 .hero article {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 1rem 0 0;
+    order: 3;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 20px;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--cor-fundo);
     padding: 15px;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
