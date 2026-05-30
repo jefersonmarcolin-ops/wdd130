@@ -10,7 +10,7 @@
     --fonte-principal: Arial, sans-serif;
 }
 
-/* --- 2. RESET UNIVERSAL --- */
+/* --- 2. RESET DE SELETOR UNIVERSAL --- */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -32,12 +32,6 @@ h2 {
     color: var(--cor-primaria);
 }
 
-/* Solução definitiva para o erro de contraste: Garante que NENHUM link herde cor preta por padrão */
-a {
-    color: var(--cor-texto-claro);
-    text-decoration: none;
-}
-
 /* --- Área Principal (Main) --- */
 main {
     max-width: 840px; 
@@ -52,6 +46,7 @@ header {
     align-items: center;            
     background-color: var(--cor-destaque1); 
     padding: 1rem 2rem;
+    color: var(--cor-texto-claro); /* Força qualquer texto direto no header a ser branco */
 }
 
 header .logo {
@@ -68,79 +63,78 @@ header nav {
     background-color: transparent;  
 }
 
+/* Correção de Contraste: Garante que os links sejam brancos e ignora o cinza do body */
 header nav a {
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-claro) !important;
+    text-decoration: none;
     font-weight: bold;
     padding: 0.5rem 1rem;
     display: inline-block;
 }
 
 header nav a:hover {
-    color: var(--cor-secundaria);                 
+    color: var(--cor-secundaria) !important;                 
 }
 
-/* --- 3. SOBREPOSIÇÃO DO HERO (Visual Ajustado e Organizado) --- */
+/* --- 3. SOBREPOSIÇÃO DO HERO (Ajuste de Alturas e Camadas) --- */
 .hero {
     position: relative; 
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     width: 100%;
+    display: block;
 }
 
 .hero > img {
     width: 100%;
-    height: auto; /* Deixa a altura livre para respeitar a proporção do seu SVG */
+    height: auto;
     display: block;
 }
 
-/* O título (h1) posicionado no topo da imagem */
+/* O título (h1) posicionado em cima de forma absoluta */
 .hero h1 {
     position: absolute;
-    top: 15px;
+    top: 25px;
     left: 50%;
     transform: translateX(-50%);
     color: var(--cor-destaque1); 
     background-color: rgba(255, 255, 255, 0.85); 
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 5px;
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2rem;
     white-space: nowrap;
-    z-index: 2;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 10; /* Garante que fica por cima de tudo de forma limpa */
 }
 
-/* O article posicionado na base de maneira limpa */
+/* O article posicionado na parte inferior de forma absoluta */
 .hero article {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
-    right: 15px;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
     background-color: rgba(255, 255, 255, 0.95); 
-    padding: 12px;
+    padding: 15px;
     border-radius: 5px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10;
 }
 
 .hero article img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
+    width: 80px;
+    height: auto;
     border: 1px solid #ccc;
-    padding: 2px;
-    border-radius: 4px;
-    flex-shrink: 0;
+    padding: 3px;
+    flex-shrink: 0; /* Impede a imagem interna de achatar */
 }
 
 .hero article p {
     color: var(--cor-texto-escuro);
     margin: 0;
     text-align: left;
-    font-size: 0.95rem;
 }
 
 /* --- SEÇÃO HISTÓRIA (Grid de 2 Colunas) --- */
@@ -157,8 +151,8 @@ header nav a:hover {
 
 .historia-conteudo img {
     width: 100%;
-    height: auto; /* Mantém a proporção correta do SVG de história */
-    display: block;
+    height: auto;
+    border-radius: 5px;
 }
 
 /* --- SEÇÃO DE AVENTURAS (Galeria Flexbox) --- */
@@ -169,7 +163,7 @@ header nav a:hover {
 .galeria-aventuras {
     display: flex;
     justify-content: space-between; 
-    gap: 10px;                      
+    gap: 12px;                      
     margin-top: 1.5rem;
 }
 
@@ -185,7 +179,7 @@ header nav a:hover {
 
 .galeria-aventuras img {
     width: 100%;                    
-    height: auto; /* Ajustado para "auto" para que o SVG preserve a proporção e o texto interno não morda */
+    height: auto;              
     display: block;
 }
 
@@ -212,7 +206,7 @@ footer p {
     color: var(--cor-primaria);
 }
 
-/* Alinhamento das redes sociais */
+/* Alinhamento horizontal das redes sociais */
 footer nav.socialmedia {
     display: flex;
     gap: 15px;                      
