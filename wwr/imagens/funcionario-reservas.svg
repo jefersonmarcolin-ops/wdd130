@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Perfil de coordenadora de reservas">
+  <rect width="160" height="160" rx="12" fill="#F4F7FA"/>
+  <ellipse cx="80" cy="145" rx="55" ry="10" fill="#4DA8DA" opacity="0.3"/>
+  <ellipse cx="80" cy="72" r="38" fill="#E9C46A"/>
+  <ellipse cx="80" cy="62" r="30" fill="#FFE8CC"/>
+  <path d="M50 48 Q80 30 110 48 L106 58 Q80 42 54 58 Z" fill="#2A9D8F"/>
+  <circle cx="68" cy="66" r="5" fill="#1D3557"/>
+  <circle cx="92" cy="66" r="5" fill="#1D3557"/>
+  <path d="M64 82 Q80 94 96 82" fill="none" stroke="#1D3557" stroke-width="3" stroke-linecap="round"/>
+  <rect x="48" y="108" width="64" height="42" rx="8" fill="#2A9D8F"/>
+  <rect x="100" y="100" width="28" height="36" rx="4" fill="#16313F" opacity="0.15"/>
+</svg>

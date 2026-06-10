@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Corredeiras Vivas Rafting. Endereço, telefone, e-mail, equipe e formulário para dúvidas e reservas.">
+    <meta name="author" content="Jeferson Marcolino">
+    <title>Fale Conosco | Corredeiras Vivas Rafting</title>
+    <link rel="stylesheet" href="estilos/rafting.css">
+</head>
+
+<body>
+    <header>
+        <img src="imagens/logo-rafting.svg" alt="Logotipo Corredeiras Vivas Rafting" class="logo">
+        <nav>
+            <a href="index.html">Página Inicial</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="passeios.html">Passeios</a>
+            <a href="contato.html">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Fale Conosco</h1>
+
+        <section class="contato-info">
+            <h2>Informações da Empresa</h2>
+            <div class="contato-grid">
+                <address>
+                    <p>Rua das Corredeiras, 1200 — Bairro Rio Claro</p>
+                    <p>Porto Alegre, RS — CEP 90000-000</p>
+                    <p>Telefone: <a href="tel:+555133334444">(51) 3333-4444</a></p>
+                    <p>WhatsApp: <a href="tel:+555199998888">(51) 99999-8888</a></p>
+                    <p>E-mail: <a href="mailto:contato@corredeirasvivas.com.br">contato@corredeirasvivas.com.br</a></p>
+                </address>
+                <iframe
+                    class="mapa-google"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.804747887798!2d-51.2303769!3d-30.0346471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951977066429f369%3A0x72a025e2f1d154b6!2sPorto%20Alegre%2C%20RS!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa da localização da Corredeiras Vivas Rafting em Porto Alegre">
+                </iframe>
+            </div>
+        </section>
+
+        <section class="equipe-contato">
+            <h2>Nossa Equipe</h2>
+            <div class="equipe-grid">
+                <figure>
+                    <img src="imagens/funcionario-guia.svg" alt="Foto de perfil de Rafael Mendes, guia de rafting">
+                    <figcaption>Rafael Mendes — Guia de Rafting</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagens/funcionario-reservas.svg" alt="Foto de perfil de Carla Souza, coordenadora de reservas">
+                    <figcaption>Carla Souza — Coordenadora de Reservas</figcaption>
+                </figure>
+                <figure>
+                    <img src="imagens/funcionario-seguranca.svg" alt="Foto de perfil de Marcos Lima, instrutor de segurança">
+                    <figcaption>Marcos Lima — Instrutor de Segurança</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="formulario-contato">
+            <h2>Envie sua Mensagem</h2>
+            <form action="#" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <fieldset>
+                    <legend>Finalidade da mensagem:</legend>
+                    <label for="consulta-geral">
+                        <input type="radio" id="consulta-geral" name="finalidade" value="consulta-geral" checked>
+                        Consulta Geral
+                    </label>
+                    <label for="pergunta-reserva">
+                        <input type="radio" id="pergunta-reserva" name="finalidade" value="pergunta-reserva">
+                        Pergunta sobre Reserva
+                    </label>
+                    <label for="sugestao-site">
+                        <input type="radio" id="sugestao-site" name="finalidade" value="sugestao-site">
+                        Sugestão de Site
+                    </label>
+                </fieldset>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+
+                <label class="checkbox-newsletter" for="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="sim">
+                    Quero receber a newsletter mensal
+                </label>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Corredeiras Vivas Rafting | Jeferson Marcolino</p>
+        <nav class="socialmedia">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/facebook.svg" alt="Visite nossa página oficial do Facebook">
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/instagram.svg" alt="Siga o nosso perfil no Instagram">
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/youtube.svg" alt="Assista aos nossos vídeos no YouTube">
+            </a>
+        </nav>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Perfil de instrutor de seguranca">
+  <rect width="160" height="160" rx="12" fill="#DFF4FF"/>
+  <ellipse cx="80" cy="145" rx="55" ry="10" fill="#1F4E5F" opacity="0.25"/>
+  <ellipse cx="80" cy="72" r="38" fill="#D4A373"/>
+  <ellipse cx="80" cy="62" r="30" fill="#FAEDCD"/>
+  <rect x="52" y="38" width="56" height="18" rx="6" fill="#1B4F72"/>
+  <circle cx="68" cy="66" r="5" fill="#1D3557"/>
+  <circle cx="92" cy="66" r="5" fill="#1D3557"/>
+  <path d="M64 82 Q80 94 96 82" fill="none" stroke="#1D3557" stroke-width="3" stroke-linecap="round"/>
+  <rect x="48" y="108" width="64" height="42" rx="8" fill="#E85D04"/>
+  <rect x="58" y="118" width="44" height="8" rx="2" fill="#FFD166"/>
+</svg>
