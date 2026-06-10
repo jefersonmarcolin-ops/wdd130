@@ -228,7 +228,7 @@ footer p {
     color: var(--cor-primaria);
 }
 
-footer nav.socialmedia {
+footer nav.redes-sociais {
     display: flex;
     gap: 15px;                      
     background-color: transparent;
@@ -236,16 +236,16 @@ footer nav.socialmedia {
     padding: 0;
 }
 
-.socialmedia a {
+.redes-sociais a {
     text-decoration: none;
 }
 
-footer nav.socialmedia a {
+footer nav.redes-sociais a {
     padding: 0;
     display: inline;
 }
 
-footer nav.socialmedia img {
+footer nav.redes-sociais img {
     width: 30px;                    
     height: auto;
 }
