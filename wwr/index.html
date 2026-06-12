@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página inicial da Corredeiras Vivas Rafting. Aventuras em corredeiras com segurança e diversão no Rio Grande do Sul.">
+    <meta name="description" content="Página inicial da Corredeiras Vivas Rafting. Descubra passeios em corredeiras, inscreva-se na newsletter e viva aventuras seguras no Rio Grande do Sul.">
     <meta name="author" content="Jeferson Marcolino">
     <title>Página Inicial | Corredeiras Vivas Rafting</title>
     <link rel="stylesheet" href="estilos/rafting.css">
@@ -22,10 +22,55 @@
     </header>
 
     <main>
-        <h1>Corredeiras Vivas Rafting</h1>
-        <p>Bem-vindo ao site da Corredeiras Vivas Rafting. Em breve, esta será a página inicial completa do projeto.</p>
-        <p>Enquanto isso, explore nossas páginas:</p>
-        <p><a href="sobre.html">Sobre Nós</a> | <a href="contato.html">Fale Conosco</a></p>
+        <div class="banner-home">
+            <img src="imagens/hero-rafting.svg" alt="Grupo de rafting navegando em corredeiras com montanhas ao fundo">
+            <h1>Viva a aventura nas corredeiras do sul</h1>
+        </div>
+
+        <section class="inicio-acoes">
+            <div class="newsletter-home">
+                <h2>Newsletter</h2>
+                <p>Receba novidades, promoções e dicas de segurança diretamente no seu e-mail.</p>
+                <form action="#" method="post">
+                    <label for="newsletter-nome">Nome:</label>
+                    <input type="text" id="newsletter-nome" name="nome" required>
+
+                    <label for="newsletter-email">E-mail:</label>
+                    <input type="email" id="newsletter-email" name="email" required>
+
+                    <button type="submit">Inscrever-se na Newsletter</button>
+                </form>
+            </div>
+
+            <div class="cta-passeios">
+                <h2>Pronto para remar?</h2>
+                <p>Conheça nossos roteiros para iniciantes, famílias e aventureiros experientes.</p>
+                <a class="botao-cta" href="passeios.html">Ver Passeios Disponíveis</a>
+            </div>
+        </section>
+
+        <section class="grid-ofertas">
+            <article class="oferta-card">
+                <img src="imagens/salto-rio-negro.svg" alt="Bote enfrentando corredeiras no Salto do Rio Negro">
+                <h2>Experiências Seguras</h2>
+                <p>Guias certificados, equipamentos revisados e protocolos de segurança em todos os passeios.</p>
+            </article>
+            <article class="oferta-card">
+                <img src="imagens/corredeira-paranapanema.svg" alt="Remadores em corredeira no Rio Paranapanema">
+                <h2>Para Todos os Níveis</h2>
+                <p>Do primeiro contato com o rio até descidas intensas, temos roteiros para cada perfil de aventureiro.</p>
+            </article>
+            <article class="oferta-card">
+                <img src="imagens/canyon-iguacu.svg" alt="Paisagem de canyon com bote de rafting">
+                <h2>Grupos e Empresas</h2>
+                <p>Pacotes personalizados para escolas, equipes corporativas e celebrações em contato com a natureza.</p>
+            </article>
+            <article class="oferta-card">
+                <img src="imagens/historia-equipe.svg" alt="Equipe de guias da Corredeiras Vivas na base do rio">
+                <h2>Respeito à Natureza</h2>
+                <p>Praticamos turismo responsável, preservando rios e ecossistemas onde nossas aventuras acontecem.</p>
+            </article>
+        </section>
     </main>
 
     <footer>
